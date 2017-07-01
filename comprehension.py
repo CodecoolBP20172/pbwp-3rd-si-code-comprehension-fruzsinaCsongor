@@ -1,19 +1,21 @@
-import random  # imports the "random" module
+import random  # import the "random" module
 
-guessesTaken = 0  # assigns 0 to "guessesTaken" variable
+guessesTaken = 0  # assign 0 to "guessesTaken" variable
 
-print('Hello! What is your name?')  # prints (outputs) "Hello! What is your name?"
-myName = input()  # waits until an input is entered, then it is assigned to "myName" variable
+print('Hello! What is your name?')  # print (outputs) "Hello! What is your name?"
+myName = input()  # wait until an input is entered, then assigned to "myName" variable
 
-number = random.randint(1, 20)  # assigns a (pseudo-)random integer (from 1 to 20, endpoints included) to "number" variable
-print('Well, ' + myName + ', I am thinking of a number between 1 and 20.')  # outputs the strings in the brackets, "myName" substituted with the input name
+# assign a (pseudo-)random integer (from 1 to 20, endpoints included) to "number" variable
+number = random.randint(1, 20)
+# output the strings in the brackets, "myName" substituted with the input name
+print('Well, ' + myName + ', I am thinking of a number between 1 and 20.')
 
-while guessesTaken < 6:  # repeatedly executes the statements of the loop while the guesses are less than 6
-    print('Take a guess.')  # outputs "Take a guess"
-    guess = input()  # waits until an input is entered, then it is assigned to "guess" variable
-    guess = int(guess)  # the "guess" input is converted to an integer (from string)
+while guessesTaken < 6:  # repeatedly execute the statements of the loop while the guesses are less than 6
+    print('Take a guess.')  # output "Take a guess"
+    guess = input()  # wait until an input is entered, then assigned to "guess" variable
+    guess = int(guess)  # "guess" input converted to an integer (from string)
 
-    guessesTaken += 1  # increments "guessesTaken" variable's value by one
+    guessesTaken += 1  # increment "guessesTaken" variable's value by one
 
     if guess < number:  # if the "guess" input is less than the randomly generated number,
         print('Your guess is too low.')  # then "Your guess is too low" is printed out
@@ -26,8 +28,10 @@ while guessesTaken < 6:  # repeatedly executes the statements of the loop while 
 
 if guess == number:  # if the "guess" input equals to the randomly generated number,
     guessesTaken = str(guessesTaken)  # then the "guessesTaken" variable (which is an integer) is cast to a string
-    print('Good job, ' + myName + '! You guessed my number in ' + guessesTaken + ' guesses!')  # prints out the strings with the input name and the actual number of guesses substituted
+    # print out the strings with the input name and the actual number of guesses substituted
+    print('Good job, ' + myName + '! You guessed my number in ' + guessesTaken + ' guesses!')
 
 if guess != number:  # if the "guess" input does not equal to the randomly generated number,
     number = str(number)  # then number (which is an integer) is cast to a string
-    print('Nope. The number I was thinking of was ' + number)  # prints out the strings in the brackets, "number" being substituted with the actual randomly generated number
+    # print out the strings in the brackets, "number" substituted with the actual randomly generated number
+    print('Nope. The number I was thinking of was ' + number)
